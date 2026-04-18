@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mentor Dashboard</title>
+   <!--BootstrapCSS-->
+  <Link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Mentor Panel</h2>
+    <ul>
+      <li onclick="showSection('overview')">🏠 Overview</li>
+      <li onclick="showSection('requests')">📨 Requests</li>
+      <li onclick="showSection('sessions')">⏰ Sessions</li>
+      <li onclick="showSection('progress')">📊 Mentee Progress</li>
+      <li onclick="logout()">🚪 Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="topbar">
+      <h2 id="welcomeMessage">Welcome, Mentor</h2>
+      <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
+    </div>
+
+    <!-- Sections -->
+    <div id="overview" class="section">
+      <div class="cards">
+        <div class="card">Pending Requests: 5</div>
+        <div class="card">Upcoming Sessions: 2</div>
+        <div class="card">Mentees Assigned: 8</div>
+      </div>
+    </div>
+
+    <div id="requests" class="section" style="display:none;">
+      <h3>Mentorship Requests</h3>
+      <p>View students who want guidance.</p>
+    </div>
+
+    <div id="sessions" class="section" style="display:none;">
+      <h3>Schedule Sessions</h3>
+      <p>Set session times for mentees.</p>
+      <button>Set Sessions</button>
+    </div>
+
+    <div id="progress" class="section" style="display:none;">
+      <h3>Mentee Progress</h3>
+      <p>Monitor mentee development and feedback.</p>
+    </div>
+
+  </div>
+</div>
+
+<script src="auth.js"></script>
+<script src="mentor-dashboard.js"></script>
+
+</body>
+</html>

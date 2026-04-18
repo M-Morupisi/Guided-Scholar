@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard</title>
+   <!--BootstrapCSS-->
+  <Link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="dashboard">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Student Panel</h2>
+    <ul>
+      <li onclick="showSection('home')">Home</li>
+      <li onclick="showSection('courses')">My Courses</li>
+      <li onclick="showSection('messages')">Messages</li>
+      <li onclick="logout()">Logout</li>
+    </ul>
+  </div>
+
+  <!-- Cards -->
+  <div class="cards">
+    <div class="card" id="totalCoursesCard">Total Courses: 0</div>
+    <div class="card" id="totalBookingsCard">Total Bookings: 0</div>
+    <div class="card" id="unreadMessagesCard">Unread Messages: 0</div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <h2 id="welcomeMessage">Welcome!</h2>
+    </div>
+
+    <div id="home" class="section">
+      <h3>Dashboard Overview</h3>
+      <p>Here you can see your courses and messages.</p>
+    </div>
+
+    <div id="courses" class="section hidden">
+      <h3>My Courses</h3>
+      <ul id="coursesList"></ul>
+      <button id="addCourseBtn">Enroll in New Course</button>
+    </div>
+
+    <div id="messages" class="section hidden">
+      <h3>Messages</h3>
+      <ul id="messagesList"></ul>
+      <button id="addMessageBtn">Send Message</button>
+    </div>
+  </div>
+</div>
+
+<script src="auth.js"></script>
+<script src="student-dashboard.js"></script>
+</body>
+</html>

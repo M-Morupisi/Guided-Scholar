@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tutor Dashboard</title>
+   <!--BootstrapCSS-->
+  <Link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Tutor Panel</h2>
+    <ul>
+      <li onclick="showSection('overview')">🏠 Overview</li>
+      <li onclick="showSection('bookings')">📅 Bookings</li>
+      <li onclick="showSection('availability')">⏰ Availability</li>
+      <li onclick="showSection('earnings')">💰 Earnings</li>
+      <li onclick="logout()">🚪 Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="topbar">
+      <h2 id="welcomeMessage">Welcome, Tutor</h2>
+      <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
+    </div>
+
+    <!-- Overview Section -->
+    <div id="overview" class="section">
+      <div class="cards">
+        <div class="card" id="totalBookings">Total Bookings: 0</div>
+        <div class="card" id="upcomingSessions">Upcoming Sessions: 0</div>
+        <div class="card" id="pendingRequests">Pending Requests: 0</div>
+      </div>
+      <div class="chart-container">
+        <canvas id="bookingsChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Bookings Section -->
+    <div id="bookings" class="section" style="display:none;">
+      <h3>My Bookings</h3>
+      <ul id="bookingsList"></ul>
+    </div>
+
+    <!-- Availability Section -->
+    <div id="availability" class="section" style="display:none;">
+      <h3>Set Availability</h3>
+      <p>Update your weekly schedule.</p>
+      <button>Update Schedule</button>
+    </div>
+
+    <!-- Earnings Section -->
+    <div id="earnings" class="section" style="display:none;">
+      <h3>Earnings</h3>
+      <p id="totalEarnings">Total Earnings: $0</p>
+      <div class="chart-container">
+        <canvas id="earningsChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="auth.js"></script>
+<script src="tutor-dashboard.js"></script>
+</body>
+</html>
